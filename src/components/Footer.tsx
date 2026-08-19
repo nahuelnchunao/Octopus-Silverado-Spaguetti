@@ -1,7 +1,7 @@
 /**
  * @file Footer.tsx
  * @description The unassuming 4th section (Colophon / Utility Footer).
- * Contains the address, legal disclosures, operating hours, and compact FAQs.
+ * Styled with subtle diagonal dark gray gradients across containers and Spanish copy.
  */
 
 import React, { useState } from 'react';
@@ -23,8 +23,6 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({
   content,
-  onOpenTrialModal,
-  onOpenInspector,
 }) => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -44,7 +42,7 @@ export const Footer: React.FC<FooterProps> = ({
           <div className="flex items-center gap-2">
             <Building className="w-4 h-4 text-amber-500" />
             <span className="font-mono text-xs font-bold text-zinc-300 uppercase tracking-wider">
-              {content.gymMeta.brandName} • FACILITY DIRECTORY & LEGAL ANNEX
+              {content.gymMeta.brandName} • DIRECTORIO Y ANEXO LEGAL
             </span>
           </div>
         </div>
@@ -55,7 +53,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 1: Facility Logistics (5 cols) */}
           <div className="md:col-span-5 space-y-4">
             <span className="font-display text-xs font-bold text-zinc-200 uppercase tracking-wider block">
-              Academy Premises & Contact
+              Sedes de la Academia & Contacto
             </span>
 
             <div className="space-y-3 text-xs text-zinc-300">
@@ -88,7 +86,7 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Col 2: Compact FAQs (7 cols) */}
           <div className="md:col-span-7 space-y-4">
             <span className="font-display text-xs font-bold text-zinc-200 uppercase tracking-wider block">
-              Common Questions (Colophon FAQ)
+              Preguntas Frecuentes (FAQ)
             </span>
 
             <div className="space-y-2.5">
@@ -97,7 +95,7 @@ export const Footer: React.FC<FooterProps> = ({
                 return (
                   <div
                     key={faq.id}
-                    className="border border-zinc-800/80 rounded-xl bg-zinc-900/40 overflow-hidden transition-colors"
+                    className="border border-zinc-700/80 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/80 to-zinc-950 overflow-hidden transition-colors shadow-sm"
                   >
                     <button
                       type="button"
@@ -113,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({
                     </button>
 
                     {isOpen && (
-                      <div className="px-4 pb-3.5 pt-1 text-[11px] text-zinc-400 leading-relaxed border-t border-zinc-800/40 animate-in fade-in duration-150">
+                      <div className="px-4 pb-3.5 pt-1 text-[11px] text-zinc-400 leading-relaxed border-t border-zinc-800/60 animate-in fade-in duration-150">
                         {faq.answer}
                       </div>
                     )}
@@ -129,7 +127,7 @@ export const Footer: React.FC<FooterProps> = ({
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
           <p>{content.utilityFooter.legalNotice}</p>
           <div className="flex items-center gap-4">
-            <span className="text-zinc-400">All memberships executed on-site.</span>
+            <span className="text-zinc-400">Inscripciones y planes coordinados directamente en la sede.</span>
           </div>
         </div>
 

@@ -1,3 +1,8 @@
+/**
+ * @file ScreenLogosMobile.tsx
+ * @description Screen 2 Mobile View with diagonal gradient cards and Spanish copy.
+ */
+
 import React, { useState, useEffect } from 'react';
 import { 
   Swords, 
@@ -5,7 +10,6 @@ import {
   Shield, 
   Users, 
   SlidersHorizontal,
-  ChevronRight,
   GraduationCap,
   Trophy,
   HeartHandshake
@@ -26,14 +30,12 @@ const DISCIPLINE_ICONS = [
 
 export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
   content,
-  onOpenTrialModal,
   onOpenCurriculumModal,
 }) => {
   const data = content.screen2Logos;
   const [activeTab, setActiveTab] = useState<number>(0);
   const [tabFade, setTabFade] = useState<'fade-in' | 'fade-out'>('fade-in');
 
-  // Auto-cycle tabs slowly if user doesn't interact, but allow manual selection
   useEffect(() => {
     const timer = setInterval(() => {
       setTabFade('fade-out');
@@ -75,7 +77,7 @@ export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
   return (
     <div
       id="screen-logos-mobile-view"
-      className="md:hidden relative min-h-[100dvh] flex flex-col justify-between pt-16 pb-4 px-4 bg-zinc-950 text-zinc-100 overflow-hidden"
+      className="md:hidden relative min-h-[100dvh] flex flex-col justify-between pt-20 pb-4 px-4 bg-zinc-950 text-zinc-100 overflow-hidden"
     >
       {/* Background Ambience */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -87,8 +89,8 @@ export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
         
         {/* HEADER */}
         <div className="text-center pt-2 pb-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-zinc-900/90 border border-amber-500/30 text-amber-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-2">
-            <span>{data.sectionTag || 'SCREEN 02 // EL ESTÁNDAR'}</span>
+          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gradient-to-br from-zinc-800/90 via-zinc-900/90 to-zinc-950 border border-amber-500/30 text-amber-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-2 shadow-md">
+            <span>{data.sectionTag || 'PANTALLA 02 // EL ESTÁNDAR'}</span>
           </div>
           
           <h2
@@ -103,9 +105,9 @@ export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
           </p>
         </div>
 
-        {/* 3 DISCIPLINE TABS SELECTOR (Segmented Tab Bar) */}
+        {/* 3 DISCIPLINE TABS SELECTOR */}
         <div className="my-2">
-          <div className="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-zinc-900/90 border border-zinc-800 shadow-inner">
+          <div className="grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/90 to-zinc-950 border border-zinc-700/80 shadow-inner">
             {data.disciplines.map((disp, idx) => (
               <button
                 key={disp.id}
@@ -113,7 +115,7 @@ export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
                 onClick={() => switchTab(idx)}
                 className={`py-2 px-1.5 rounded-lg flex flex-col items-center justify-center text-center transition-all duration-200 cursor-pointer ${
                   activeTab === idx
-                    ? 'bg-amber-500/20 border border-amber-500/50 text-amber-300 shadow-sm'
+                    ? 'bg-gradient-to-br from-amber-400/20 via-amber-500/20 to-amber-600/10 border border-amber-500/50 text-amber-300 shadow-sm'
                     : 'bg-transparent text-zinc-400 hover:text-zinc-200 border border-transparent'
                 }`}
               >
@@ -125,9 +127,9 @@ export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
             ))}
           </div>
 
-          {/* ACTIVE DISCIPLINE CARD */}
+          {/* ACTIVE DISCIPLINE CARD with diagonal gradient */}
           <div
-            className={`mt-2.5 p-4 rounded-xl bg-zinc-900/95 border border-zinc-800/90 shadow-xl transition-all duration-200 ${
+            className={`mt-2.5 p-4 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/90 to-zinc-950 border border-zinc-700/80 shadow-xl transition-all duration-200 ${
               tabFade === 'fade-in'
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-1'
@@ -155,49 +157,43 @@ export const ScreenLogosMobile: React.FC<ScreenLogosMobileProps> = ({
               {activeDiscipline.focusHighlights.map((focus, fIdx) => (
                 <span
                   key={fIdx}
-                  className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-zinc-950/80 border border-zinc-800 text-[10px] text-zinc-300 font-mono"
+                  className="inline-flex items-center gap-1 px-2 py-1 rounded-md bg-zinc-950/80 border border-zinc-700/80 text-[10px] text-zinc-300 font-mono"
                 >
                   <span className="w-1 h-1 rounded-full bg-amber-400" />
-                  {focus}
+                  <span>{focus}</span>
                 </span>
               ))}
             </div>
 
-            {/* Full Curriculum Button */}
+            {/* Curriculum Modal Button */}
             <button
               type="button"
               onClick={() => onOpenCurriculumModal(activeDiscipline)}
-              className="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-zinc-950 hover:bg-amber-500/10 border border-zinc-800 hover:border-amber-500/40 text-xs font-mono text-amber-400 transition-colors cursor-pointer"
+              className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-gradient-to-br from-zinc-900/90 to-zinc-950 hover:from-amber-500/20 hover:to-amber-500/10 border border-zinc-700 hover:border-amber-500/50 text-[11px] font-mono text-zinc-300 hover:text-amber-400 transition-colors cursor-pointer"
             >
-              <SlidersHorizontal className="w-3.5 h-3.5" />
+              <SlidersHorizontal className="w-3.5 h-3.5 text-amber-500" />
               <span>Ver Plan Técnico y Detalles</span>
-              <ChevronRight className="w-3.5 h-3.5 ml-auto" />
             </button>
           </div>
         </div>
 
-        {/* 4 VALUE PILLARS (2x2 Compact Grid on Mobile) */}
-        <div className="mt-3 pt-2.5 border-t border-zinc-800/80">
-          <div className="grid grid-cols-2 gap-2">
-            {data.facilityPillars.map((pillar) => (
-              <div
-                key={pillar.id}
-                className="p-2.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 flex items-start gap-2"
-              >
-                <div className="p-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 shrink-0 text-amber-400">
-                  {getPillarIcon(pillar.iconName)}
-                </div>
-                <div className="min-w-0">
-                  <h4 className="font-display text-[11px] font-bold uppercase tracking-tight text-zinc-100 leading-tight line-clamp-2">
-                    {pillar.title}
-                  </h4>
-                  <p className="text-[9px] text-zinc-400 mt-0.5 leading-snug line-clamp-2">
-                    {pillar.description}
-                  </p>
-                </div>
+        {/* 4 FACILITY PILLARS (2x2 Compact Grid) */}
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          {data.facilityPillars.map((pillar) => (
+            <div
+              key={pillar.id}
+              className="p-2.5 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/80 to-zinc-950 border border-zinc-700/80 shadow-md flex items-start gap-2"
+            >
+              <div className="p-1.5 rounded-lg bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-transparent border border-amber-500/30 text-amber-400 shrink-0 mt-0.5">
+                {getPillarIcon(pillar.iconName)}
               </div>
-            ))}
-          </div>
+              <div className="min-w-0">
+                <h4 className="font-display text-[10.5px] font-bold uppercase tracking-tight text-zinc-100 leading-tight">
+                  {pillar.title}
+                </h4>
+              </div>
+            </div>
+          ))}
         </div>
 
       </div>

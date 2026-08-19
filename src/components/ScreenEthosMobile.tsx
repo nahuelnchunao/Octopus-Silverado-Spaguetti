@@ -1,3 +1,9 @@
+/**
+ * @file ScreenEthosMobile.tsx
+ * @description Screen 3 Mobile view (< 768px).
+ * Styled with subtle diagonal dark gray gradients across cards and buttons.
+ */
+
 import React from 'react';
 import { Trophy, Award, Medal, CheckCircle2, ArrowRight, ShieldCheck, Star } from 'lucide-react';
 import { SiteContentConfig } from '../types';
@@ -28,7 +34,7 @@ export const ScreenEthosMobile: React.FC<ScreenEthosMobileProps> = ({
   return (
     <div
       id="screen-ethos-mobile-view"
-      className="md:hidden relative min-h-[100dvh] flex flex-col justify-between pt-16 pb-4 px-4 bg-zinc-950 text-zinc-100 overflow-hidden select-none"
+      className="md:hidden relative min-h-[100dvh] flex flex-col justify-between pt-20 pb-4 px-4 bg-zinc-950 text-zinc-100 overflow-hidden select-none"
     >
       {/* Ambient background glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -40,9 +46,9 @@ export const ScreenEthosMobile: React.FC<ScreenEthosMobileProps> = ({
         
         {/* 1. HEADER SECTION */}
         <div className="text-center pt-2 pb-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-zinc-900/90 border border-amber-500/30 text-amber-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-2">
+          <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-gradient-to-br from-zinc-800/90 via-zinc-900/90 to-zinc-950 border border-amber-500/30 text-amber-400 text-[10px] font-mono font-bold tracking-widest uppercase mb-2 shadow-md">
             <Star className="w-3 h-3 text-amber-400 fill-amber-400" />
-            <span>{data.sectionTag || 'SCREEN 03 // AUTORIDAD'}</span>
+            <span>{data.sectionTag || 'PANTALLA 03 // AUTORIDAD'}</span>
           </div>
 
           <h2
@@ -57,15 +63,15 @@ export const ScreenEthosMobile: React.FC<ScreenEthosMobileProps> = ({
           </p>
         </div>
 
-        {/* 2. THE 3 AUTHORITY PROOF CARDS (Clean Horizontal Badges) */}
+        {/* 2. THE 3 AUTHORITY PROOF CARDS (Diagonal Gradient Badges) */}
         <div className="space-y-2 my-2">
           {data.authorityProofs.map((proof, idx) => (
             <div
               key={proof.id}
-              className="p-3 rounded-xl bg-zinc-900/90 border border-zinc-800/90 shadow-md flex items-center gap-3 relative overflow-hidden"
+              className="p-3 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/80 to-zinc-950 border border-zinc-700/80 shadow-md flex items-center gap-3 relative overflow-hidden"
             >
               {/* Left Stat Number + Icon Box */}
-              <div className="w-13 h-13 rounded-xl bg-zinc-950 border border-amber-500/30 flex flex-col items-center justify-center shrink-0 shadow-inner px-1">
+              <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-amber-500/30 flex flex-col items-center justify-center shrink-0 shadow-inner px-1">
                 <span className="font-display text-xs font-black text-amber-400 leading-none">
                   {proof.statNumber}
                 </span>
@@ -89,8 +95,8 @@ export const ScreenEthosMobile: React.FC<ScreenEthosMobileProps> = ({
           ))}
         </div>
 
-        {/* 3. THE OFFER CARD & GLOWING YELLOW CTA */}
-        <div className="mt-2 p-4 rounded-2xl bg-gradient-to-b from-zinc-900 via-zinc-900/95 to-zinc-950 border border-amber-500/40 shadow-2xl relative overflow-hidden text-center">
+        {/* 3. THE OFFER CARD & GLOWING YELLOW CTA (Diagonal Gradient Container) */}
+        <div className="mt-2 p-4 rounded-2xl bg-gradient-to-br from-zinc-800/95 via-zinc-900/90 to-zinc-950 border border-zinc-700/80 shadow-2xl relative overflow-hidden text-center">
           
           {/* Subtle inside glow */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-12 bg-amber-500/20 blur-xl pointer-events-none" />
@@ -103,17 +109,17 @@ export const ScreenEthosMobile: React.FC<ScreenEthosMobileProps> = ({
             {data.dealSummary.subline}
           </p>
 
-          {/* Compact 2-col Terms List */}
-          <div className="grid grid-cols-2 gap-1.5 text-left mb-3.5 px-1">
+          {/* Terms List */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-left mb-3.5 px-1">
             {data.dealSummary.terms.map((term, tIdx) => (
-              <div key={tIdx} className="flex items-center gap-1.5 text-[10px] text-zinc-300">
-                <CheckCircle2 className="w-3 h-3 text-amber-400 shrink-0" />
-                <span className="truncate">{term}</span>
+              <div key={tIdx} className="flex items-center gap-2 text-[11px] text-zinc-300">
+                <CheckCircle2 className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                <span>{term}</span>
               </div>
             ))}
           </div>
 
-          {/* GLOWING YELLOW BUTTON (Full Mobile Touch Target) */}
+          {/* GLOWING YELLOW BUTTON */}
           <div className="relative w-full">
             <div className="absolute -inset-0.5 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 opacity-80 blur-sm animate-pulse pointer-events-none" />
             <button

@@ -1,3 +1,10 @@
+/**
+ * @file ScreenPathosMobile.tsx
+ * @description Screen 1 Mobile view (< 768px).
+ * Header position lowered to avoid colliding with top navigation bar and floating elements.
+ * Styled with subtle diagonal dark gray gradient foreground elements.
+ */
+
 import React, { useState, useEffect } from 'react';
 import { Zap, Trophy, BicepsFlexed } from 'lucide-react';
 import { SiteContentConfig } from '../types';
@@ -75,7 +82,7 @@ export const ScreenPathosMobile: React.FC<ScreenPathosMobileProps> = ({
   return (
     <div
       id="screen-pathos-mobile-view"
-      className="md:hidden relative h-[100dvh] flex flex-col justify-between pt-18 pb-3 px-4 bg-zinc-950 text-zinc-100 overflow-hidden select-none"
+      className="md:hidden relative h-[100dvh] flex flex-col justify-between pt-24 pb-4 px-4 bg-zinc-950 text-zinc-100 overflow-hidden select-none"
     >
       {/* Background Ambience & Official PNG Logo */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
@@ -95,12 +102,12 @@ export const ScreenPathosMobile: React.FC<ScreenPathosMobileProps> = ({
         <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/80 via-transparent to-zinc-950" />
       </div>
 
-      {/* 1. TOP SECTION */}
-      <div className="relative z-10 text-center pt-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900/90 border border-amber-500/40 text-amber-400 text-[11px] font-mono font-bold tracking-wider uppercase mb-2 shadow-md">
+      {/* 1. TOP SECTION - Lowered with ample clearance from fixed header */}
+      <div className="relative z-10 text-center pt-4 sm:pt-6">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-gradient-to-br from-zinc-800/90 via-zinc-900/90 to-zinc-950 border border-amber-500/40 text-amber-400 text-[11px] font-mono font-bold tracking-wider uppercase mb-3 shadow-lg backdrop-blur-md">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
           <span
-            className={`flex items-center gap-1 transition-opacity duration-300 ${
+            className={`flex items-center gap-1.5 transition-opacity duration-300 ${
               fadeState === 'fade-in' ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -111,12 +118,12 @@ export const ScreenPathosMobile: React.FC<ScreenPathosMobileProps> = ({
 
         <h1
           id="hero-main-h1-mobile"
-          className="font-display text-4xl xs:text-5xl font-black uppercase tracking-tight text-white leading-none mb-1 drop-shadow-md"
+          className="font-display text-4xl xs:text-5xl font-black uppercase tracking-tight text-white leading-none mb-1.5 drop-shadow-md"
         >
           AEHCH
         </h1>
 
-        <p className="font-mono text-[10px] uppercase tracking-widest text-amber-400/90 font-semibold mb-3">
+        <p className="font-mono text-[10.5px] uppercase tracking-widest text-amber-400/90 font-semibold mb-3">
           Academia de Esgrima Histórica de Chile
         </p>
 
@@ -130,18 +137,18 @@ export const ScreenPathosMobile: React.FC<ScreenPathosMobileProps> = ({
         </div>
       </div>
 
-      {/* 2. BOTTOM CAROUSEL / PILLAR BANNER */}
+      {/* 2. BOTTOM CAROUSEL / PILLAR BANNER with subtle diagonal gradient */}
       <div className="relative z-10 w-full mb-1">
         <div
           onClick={goToNextSlide}
-          className="relative bg-gradient-to-r from-zinc-900/95 via-zinc-900 to-zinc-950 border border-amber-500/40 rounded-2xl p-4 shadow-xl cursor-pointer active:scale-99 transition-transform overflow-hidden min-h-[96px] flex flex-col justify-center"
+          className="relative bg-gradient-to-br from-zinc-800/90 via-zinc-900/80 to-zinc-950 border border-zinc-700/80 rounded-2xl p-4 shadow-xl cursor-pointer active:scale-99 transition-transform overflow-hidden min-h-[96px] flex flex-col justify-center"
         >
           <div
             className={`flex items-center gap-3.5 transition-opacity duration-200 ${
               pillarFade === 'fade-in' ? 'opacity-100' : 'opacity-0'
             }`}
           >
-            <div className="p-2.5 rounded-xl bg-zinc-950 border border-amber-500/40 text-amber-400 shrink-0 shadow-inner">
+            <div className="p-2.5 rounded-xl bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-transparent border border-amber-500/30 text-amber-400 shrink-0 shadow-inner">
               {currentPillar.icon}
             </div>
 

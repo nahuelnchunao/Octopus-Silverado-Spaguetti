@@ -1,91 +1,85 @@
 /**
  * @file siteContent.ts
- * @description Streamlined copy, graphics specs, and metadata configuration.
- * 
- * LEAN 3-SCREEN ARCHITECTURE ("PURE MEAT, NO FAT"):
- * - SCREEN 1 (PATHOS): Attention hook — "Sharpen your spirit. Discover real speed and power."
- * - SCREEN 2 (LOGOS): The Deal — 3 core disciplines, fitness & nutrition coaches, on-site medics, private premises.
- * - SCREEN 3 (ETHOS): Hard Proof — #10 ranked fighter instructor, oldest club, most podium winners. Free 1st class (pay on site).
- * - SECTION 4 (COLOPHON/FOOTER): Unassuming utility area with address, legal details, and FAQs.
+ * @description Configuración de contenido oficial de la Academia de Esgrima Histórica de Chile (AEHCH).
+ * Totalmente en español, consistente entre versión de escritorio y móvil.
  */
 
 import { SiteContentConfig } from '../types';
 
 export const initialSiteContent: SiteContentConfig = {
   gymMeta: {
-    brandName: '[GYM BRAND NAME / E.G. "TITAN COMBAT CLUB"]',
-    brandSlogan: '[OFFICIAL SLOGAN / E.G. "PURITY IN DISCIPLINE. SOVEREIGNTY IN COMBAT."]',
-    contactPhone: '+1 (555) 019-2834',
-    contactEmail: 'admissions@[yourgymdomain].com',
-    facilityAddress: '[ACADEMY ADDRESS / E.G. "450 VICTORIA WAY, DISTRICT 4"]',
-    operatingHours: 'MON-FRI: 06:00 - 21:30 | SAT: 08:00 - 18:00 | SUN: 09:00 - 14:00',
+    brandName: 'Academia de Esgrima Histórica de Chile (AEHCH)',
+    brandSlogan: 'Citius, Altius, Fortius • Más Rápido, Más Alto, Más Fuerte',
+    contactPhone: '+56 9 8412 9031',
+    contactEmail: 'contacto@aehch.cl',
+    facilityAddress: 'Santiago, Chile • Sedes de Entrenamiento Central y Oriente',
+    operatingHours: 'LUN-VIE: 18:00 - 22:00 | SÁB: 10:00 - 15:00',
   },
 
   navigation: {
-    logoPlaceholder: '[TYPOGRAPHY LOGO: GYM BRANDMARK]',
-    primaryCtaText: 'FREE FIRST CLASS',
-    primaryCtaSubtext: 'Zero Fee • Pay On-Site If You Join',
+    logoPlaceholder: 'AEHCH',
+    primaryCtaText: 'CLASE DE PRUEBA',
+    primaryCtaSubtext: '100% Gratis • Sin Compromiso',
   },
 
   // =========================================================================
   // SCREEN 1: THE HOOK (PATHOS)
-  // "Oh, you're gonna make me faster, you say? You will sharpen my spirit?"
   // =========================================================================
   screen1Pathos: {
-    sectionTag: 'SCREEN 01 // THE HOOK',
+    sectionTag: 'PANTALLA 01 // EL INICIO',
     heroBadge: {
-      label: '[HERO PROMISE BADGE]',
-      guidance: 'Ultra-direct claim of physical and spiritual conditioning (4-7 words).',
-      currentValue: 'EXPLOSIVE SPEED • UNBREAKABLE FOCUS • REFINED SPIRIT',
-      suggestedWordCount: '4-7 words',
-      conversionRole: 'Attention Grabber',
+      label: '[INSIGNIA DEL HÉROE]',
+      guidance: 'Afirmación directa del condicionamiento técnico y espiritual.',
+      currentValue: 'VELOCIDAD EXPLOSIVA • FOCO TOTAL • ESPÍRITU MARCIAL',
+      suggestedWordCount: '4-7 palabras',
+      conversionRole: 'Captador de Atención',
     },
     heroH1: {
-      label: '[HERO H1: THE ATTENTION HOOK]',
-      guidance: 'Challenge the visitor directly. Speak to speed, spirit, and raw capability.',
-      currentValue: 'WE WILL MAKE YOU FASTER. WE WILL SHARPEN YOUR SPIRIT.',
-      suggestedWordCount: '8-12 words',
-      conversionRole: 'High-Impact Above-the-Fold Hook',
+      label: '[H1 PRINCIPAL]',
+      guidance: 'Llamado directo al esgrimista.',
+      currentValue: 'TE HAREMOS MÁS RÁPIDO. FORJAREMOS TU CARÁCTER.',
+      suggestedWordCount: '8-12 palabras',
+      conversionRole: 'Gancho de Alto Impacto',
     },
     heroSubhead: {
-      label: '[HERO SUBHEAD]',
-      guidance: 'Punchy bridge clarifying that this is authentic, disciplined training for those who refuse to stay ordinary.',
-      currentValue: 'No gimmicks. No commercial fitness theatre. Step onto our mats to forge genuine combat speed, relentless mental clarity, and physical sovereignty.',
-      suggestedWordCount: '18-24 words',
-      conversionRole: 'Clarity & Identity Alignment',
+      label: '[SUBTÍTULO HERO]',
+      guidance: 'Presentación de la academia y su disciplina marcial histórica.',
+      currentValue: 'Sin modas pasajeras. Estudia las verdaderas fuentes de combate europeo con instructores rankeados y una comunidad dedicada.',
+      suggestedWordCount: '18-24 palabras',
+      conversionRole: 'Alineación de Identidad',
     },
     primaryCta: {
-      label: '[HERO PRIMARY CTA]',
-      guidance: 'Zero-friction trial booking invitation.',
-      currentValue: 'CLAIM YOUR FREE FIRST CLASS',
-      suggestedWordCount: '4-6 words',
-      conversionRole: 'Instant Frictionless Booking',
+      label: '[BOTÓN CTA PRINCIPAL]',
+      guidance: 'Invitación sin fricción a clase de prueba.',
+      currentValue: 'SOLICITA TU CLASE DE PRUEBA',
+      suggestedWordCount: '4-6 palabras',
+      conversionRole: 'Reserva Directa',
     },
     heroGraphic: {
       id: 'hero-cinematic-visual',
-      name: 'Hero Silhouette / Athletic Graphic',
+      name: 'Gráfico Hero Esgrima Histórica',
       aspectRatio: '16:9',
       recommendedResolution: '1920 x 1080 px',
-      subjectRecommendation: 'Dramatic, high-contrast silhouette or focused athlete in movement. Dynamic lighting highlighting speed and concentration.',
-      lightingAndMood: 'Deep matte blacks with warm golden/amber rim light. Intense focus.',
-      framingNotes: 'Framed cleanly to keep typography razor-sharp and legible.',
+      subjectRecommendation: 'Silueta de esgrimista en postura de guardia con espada larga.',
+      lightingAndMood: 'Fondos oscuros de grafito con iluminación ámbar cálida.',
+      framingNotes: 'Composición limpia con tipografía de alto contraste.',
       placeholderImageUrl: 'https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?auto=format&fit=crop&w=1920&q=80',
     },
     hookMetrics: [
       {
-        label: 'REACTION SPEED',
+        label: 'VELOCIDAD DE REACCIÓN',
         value: '+38%',
-        desc: 'Faster kinetic reflexes and decision-making under pressure.',
+        desc: 'Reflejos cinéticos rápidos y toma de decisiones tácticas bajo presión.',
       },
       {
-        label: 'MENTAL GRIT',
+        label: 'FORTALEZA MENTAL',
         value: '100%',
-        desc: 'Zero-distraction focus forged in authentic sparring rounds.',
+        desc: 'Concentración absoluta forjada en asaltos y combate libre con armas históricas.',
       },
       {
-        label: 'FUNCTIONAL POWER',
+        label: 'POTENCIA FUNCIONAL',
         value: 'REAL',
-        desc: 'Combat-tested biomechanics that translate outside the gym.',
+        desc: 'Biomecánica marcial aplicada que desarrolla atletismo y longevidad.',
       },
     ],
   },
@@ -94,20 +88,20 @@ export const initialSiteContent: SiteContentConfig = {
   // SCREEN 2: THE DEAL (LOGOS)
   // =========================================================================
   screen2Logos: {
-    sectionTag: 'SCREEN 02 // EL ESTÁNDAR MÁS ALTO',
+    sectionTag: 'PANTALLA 02 // EL ESTÁNDAR MÁS ALTO',
     sectionH2: {
-      label: '[SCREEN 2 H2: EL ESTÁNDAR]',
-      guidance: 'Present the complete, uncompromised training ecosystem in one clear statement.',
-      currentValue: 'La academia de esgrima histórica de estandar más alto de chile',
-      suggestedWordCount: '8-12 words',
-      conversionRole: 'Rational Value Presentation',
+      label: '[H2 SCREEN 2: EL ESTÁNDAR]',
+      guidance: 'Afirmación de excelencia técnica.',
+      currentValue: 'La academia de esgrima histórica de estándar más alto de Chile',
+      suggestedWordCount: '8-12 palabras',
+      conversionRole: 'Presentación de Valor Racional',
     },
     sectionSubhead: {
-      label: '[SCREEN 2 SUBHEAD]',
-      guidance: 'Reassure them that everything needed for full physical evolution is housed under one roof.',
+      label: '[SUBTÍTULO SCREEN 2]',
+      guidance: 'Enfoque de accesibilidad y excelencia.',
       currentValue: 'Queremos ser el mejor club posible para la mayor cantidad de personas posibles',
-      suggestedWordCount: '12-16 words',
-      conversionRole: 'Holistic Ecosystem Proof',
+      suggestedWordCount: '12-16 palabras',
+      conversionRole: 'Validación del Ecosistema Integral',
     },
     disciplines: [
       {
@@ -118,12 +112,12 @@ export const initialSiteContent: SiteContentConfig = {
         focusHighlights: ['Bases Técnicas y Desplazamientos', 'Guardias y Control del Arma', 'Sparring Gradual y Seguro'],
         graphicSpec: {
           id: 'graphic-disp-01',
-          name: 'Discipline 01 Visual',
+          name: 'Visual Disciplina 01',
           aspectRatio: '4:3',
           recommendedResolution: '1000 x 750 px',
-          subjectRecommendation: 'Athlete executing precise technique in authentic training gear.',
-          lightingAndMood: 'Matte dark background with high-contrast amber rim lighting.',
-          framingNotes: 'Medium close-up focusing on form and intent.',
+          subjectRecommendation: 'Atleta ejecutando técnica con espada larga en indumentaria oficial.',
+          lightingAndMood: 'Fondo oscuro grafito con contraste dorado.',
+          framingNotes: 'Plano medio enfocado en la precisión técnica.',
           placeholderImageUrl: 'https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=1000&q=80',
         },
         technicalDetails: {
@@ -141,12 +135,12 @@ export const initialSiteContent: SiteContentConfig = {
         focusHighlights: ['Táctica de Combate en Torneo', 'Velocidad de Reacción y Presión', 'Análisis y Acondicionamiento Específico'],
         graphicSpec: {
           id: 'graphic-disp-02',
-          name: 'Discipline 02 Visual',
+          name: 'Visual Disciplina 02',
           aspectRatio: '4:3',
           recommendedResolution: '1000 x 750 px',
-          subjectRecommendation: 'High-focus grapple or close-range positional grip work.',
-          lightingAndMood: 'Dramatic directional studio lighting.',
-          framingNotes: 'Dynamic low angle demonstrating balance and control.',
+          subjectRecommendation: 'Combate dinámico a distancia media con equipamiento completo.',
+          lightingAndMood: 'Iluminación deportiva direccional de alto contraste.',
+          framingNotes: 'Ángulo dinámico que muestra equilibrio y control.',
           placeholderImageUrl: 'https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?auto=format&fit=crop&w=1000&q=80',
         },
         technicalDetails: {
@@ -164,16 +158,16 @@ export const initialSiteContent: SiteContentConfig = {
         focusHighlights: ['Preparación Física Marcial', 'Guía de Nutrición y Rendimiento', 'Comunidad y Respaldo Continuo'],
         graphicSpec: {
           id: 'graphic-disp-03',
-          name: 'Discipline 03 Visual',
+          name: 'Visual Disciplina 03',
           aspectRatio: '4:3',
           recommendedResolution: '1000 x 750 px',
-          subjectRecommendation: 'Athlete working with kettlebells, trap bar, or explosive athletic drills.',
-          lightingAndMood: 'Industrial aesthetic, textured dark concrete.',
-          framingNotes: 'Wide framing capturing dedicated conditioning zone.',
+          subjectRecommendation: 'Atleta realizando ejercicios de acondicionamiento físico funcional.',
+          lightingAndMood: 'Estética sobria con tonos oscuros y cálidos.',
+          framingNotes: 'Encuadre amplio en zona de acondicionamiento.',
           placeholderImageUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80',
         },
         technicalDetails: {
-          curriculumOverview: 'Plan integral que abarca salud articular, longevidad atlética, nutrición orientada a la competencia y soporte mutuo de equipo.',
+          curriculumOverview: 'Plan integral que abarca salud articular, longevidad atlética, nutrición orientada a la práctica marcial y soporte de equipo.',
           weeklyFrequency: 'Horarios flexibles de entrenamiento y seguimiento constante.',
           gearRequired: 'Ganas de superarse y actitud de colaboración con la comunidad.',
           progressionBenchmark: 'Crecimiento integral tanto en el aspecto marcial como personal y atlético.',
@@ -185,12 +179,12 @@ export const initialSiteContent: SiteContentConfig = {
         id: 'pillar-armas',
         title: '4 armas distintas para aprender',
         tagline: 'Versatilidad Marcial Histórica',
-        description: 'Domina espada larga, espada ropera, sable militar y espada y broquel con fuentes primarias y rigor técnico.',
+        description: 'Domina espada larga, espada ropera, sable militar y espada con broquel con fuentes primarias y rigor técnico.',
         iconName: 'Swords',
       },
       {
         id: 'pillar-precio',
-        title: 'El mejor precio por clase de santiago',
+        title: 'El mejor precio por clase de Santiago',
         tagline: 'Accesibilidad y Valor Real',
         description: 'Planes accesibles y transparentes para que entrenes al más alto nivel sin barreras económicas innecesarias.',
         iconName: 'Tag',
@@ -216,20 +210,20 @@ export const initialSiteContent: SiteContentConfig = {
   // SCREEN 3: HARD PROOF & THE GLOWING YELLOW CTA (ETHOS)
   // =========================================================================
   screen3Ethos: {
-    sectionTag: 'SCREEN 03 // AUTORIDAD & TRAYECTORIA',
+    sectionTag: 'PANTALLA 03 // AUTORIDAD & TRAYECTORIA',
     sectionH2: {
-      label: '[SCREEN 3 H2: HARD PROOF]',
-      guidance: 'State the undisputable authority, podium track record, and national prestige.',
-      currentValue: 'La academia de esgrima historica más grande de chile',
-      suggestedWordCount: '7-10 words',
-      conversionRole: 'Ultimate Skepticism Crusher',
+      label: '[H2 SCREEN 3: AUTORIDAD]',
+      guidance: 'Autoridad indiscutida y trayectoria de podios.',
+      currentValue: 'La academia de esgrima histórica más grande de Chile',
+      suggestedWordCount: '7-10 palabras',
+      conversionRole: 'Prueba de Liderazgo',
     },
     sectionSubhead: {
-      label: '[SCREEN 3 SUBHEAD]',
-      guidance: 'Reinforce that they are learning directly from nationally ranked competitors in the most winning club.',
-      currentValue: 'Multiples sedes, instructores de calidad, reconocidos a nivel global',
-      suggestedWordCount: '8-12 words',
-      conversionRole: 'Pedigree Confirmation',
+      label: '[SUBTÍTULO SCREEN 3]',
+      guidance: 'Reconocimiento y prestigio del cuerpo de instructores.',
+      currentValue: 'Múltiples sedes, instructores de calidad, reconocidos a nivel global',
+      suggestedWordCount: '8-12 palabras',
+      conversionRole: 'Confirmación de Trayectoria',
     },
     authorityProofs: [
       {
@@ -242,31 +236,31 @@ export const initialSiteContent: SiteContentConfig = {
         customImageUrl: '',
         imageSpec: {
           id: 'img-ranked-fighter',
-          name: 'Head Instructor / Top 10 Fighter Image',
+          name: 'Instructor Rankeado',
           aspectRatio: '1:1',
-          recommendedResolution: '600 x 600 px (Square / Badge)',
-          subjectRecommendation: 'Head instructor portrait in competition uniform, active tournament photo, or federation ranking certificate.',
-          lightingAndMood: 'Dramatic contrast, athletic focus, gold/dark background accents.',
-          framingNotes: 'Centered athlete or federation emblem with high contrast.',
+          recommendedResolution: '600 x 600 px',
+          subjectRecommendation: 'Retrato de instructor con indumentaria de competencia.',
+          lightingAndMood: 'Contraste dramático, enfoque atlético.',
+          framingNotes: 'Centrado con alto contraste.',
           placeholderImageUrl: '',
         },
       },
       {
         id: 'proof-oldest-club',
         statNumber: '2DA',
-        statLabel: 'La segunda academia de esgrima historica más antigua de chile',
+        statLabel: 'La segunda academia de esgrima histórica más antigua de Chile',
         proofBadge: 'TRAYECTORIA HISTÓRICA',
-        description: 'Fundada en 2010, con más de una década formando esgrimistas y liderando la difusión del arte marcial en el país.',
+        description: 'Fundada en septiembre de 2010, con más de una década formando esgrimistas y liderando la difusión del arte marcial en el país.',
         highlightIcon: 'Award',
         customImageUrl: '',
         imageSpec: {
           id: 'img-oldest-club',
-          name: 'Historic Club Heritage / Foundation Crest',
+          name: 'Emblema Histórico de Fundación',
           aspectRatio: '1:1',
-          recommendedResolution: '600 x 600 px (Square / Badge)',
-          subjectRecommendation: 'Academy founding banner, historic team photo, official federation charter, or academy championship crest.',
-          lightingAndMood: 'Classic, vintage or sleek monochrome with gold highlight.',
-          framingNotes: 'High-contrast emblem or archive team victory photo.',
+          recommendedResolution: '600 x 600 px',
+          subjectRecommendation: 'Estandarte de la academia o foto de equipo.',
+          lightingAndMood: 'Monocromo sobrio con toque dorado.',
+          framingNotes: 'Emblema nítido de alto contraste.',
           placeholderImageUrl: '',
         },
       },
@@ -275,62 +269,61 @@ export const initialSiteContent: SiteContentConfig = {
         statNumber: '#1',
         statLabel: 'Club con mayor número de medallistas activos',
         proofBadge: 'RÉCORD COMPETITIVO',
-        description: 'Líderes indiscutidos en el medallero nacional con el mayor registro de atletas en los podios de torneos oficiales.',
+        description: 'Líderes en el medallero nacional con el mayor registro de atletas en los podios de torneos oficiales de esgrima histórica.',
         highlightIcon: 'Medal',
         customImageUrl: '',
         imageSpec: {
           id: 'img-podium-winners',
-          name: 'Championship Podium & Medal Archive Image',
+          name: 'Medallistas y Podios',
           aspectRatio: '1:1',
-          recommendedResolution: '600 x 600 px (Square / Badge)',
-          subjectRecommendation: 'Team on competition medal podium, tournament trophy display, or gold medal showcase.',
-          lightingAndMood: 'Triumphant, sharp lighting, tournament stadium atmosphere.',
-          framingNotes: 'Podium stage or medal arrangement with clear focal point.',
+          recommendedResolution: '600 x 600 px',
+          subjectRecommendation: 'Equipo en podio de torneo.',
+          lightingAndMood: 'Ambiente de victoria con iluminación nítida.',
+          framingNotes: 'Podio con foco claro.',
           placeholderImageUrl: '',
         },
       },
     ],
     dealSummary: {
-      headline: 'TEST OUR MATS WITH ZERO FINANCIAL RISK',
-      subline: 'We do not sell complicated membership packages online. Your first class is 100% free. If you choose to join us, all payments are handled securely on-site.',
+      headline: 'Entrena esgrima con nosotros, con total seguridad.',
+      subline: 'No vendemos planes complicados, ofrecemos clases de prueba, y los estudiantes tienen descuento.',
       terms: [
-        '100% Free First Class — Zero Payment Needed Today',
-        'No Credit Card Required Online',
-        'Direct Training with Senior Coaching Staff',
-        'Payments Handled Exclusively On-Site If You Join',
+        'Clase de prueba disponible para nuevos alumnos',
+        'Descuento preferencial para estudiantes',
+        'Sin contratos forzosos ni planes complicados',
+        'Equipamiento de seguridad y supervisión experta',
       ],
-      glowingCtaText: 'CLAIM YOUR FREE FIRST CLASS NOW',
-      glowingCtaSubtext: '⚡ Instant Confirmation • Lock In Your Free Session',
+      glowingCtaText: 'SOLICITA TU CLASE DE PRUEBA',
+      glowingCtaSubtext: '⚡ Confirmación Rápida • Entrena con Seguridad',
     },
   },
 
   // =========================================================================
   // SECTION 4: UNASSUMING UTILITY ANNEX (FOOTER / COLOPHON)
-  // Legal things, address, operating hours, and compact FAQs
   // =========================================================================
   utilityFooter: {
-    legalNotice: '© 2026 Modern Combat Athletics Academy. Registered Sports & Martial Arts Association. All rights reserved.',
-    liabilityDisclaimer: 'Notice: Combat sports training involves physical exertion. All participants are supervised by certified instructors and on-site medical staff. Free trial sessions are subject to facility capacity.',
+    legalNotice: '© 2026 Academia de Esgrima Histórica de Chile (AEHCH). Todos los derechos reservados.',
+    liabilityDisclaimer: 'Nota: La práctica de esgrima histórica se realiza bajo supervisión de instructores certificados y con protocolos estrictos de seguridad. Las clases de prueba están sujetas a cupos disponibles.',
     faqs: [
       {
         id: 'faq-01',
-        question: 'Do I need prior experience or high fitness for the free first class?',
-        answer: 'None whatsoever. Every newcomer is guided through a controlled, non-injurious introductory onboarding session scaled precisely to your current physical baseline.',
+        question: '¿Necesito experiencia previa o condición física especial para la clase de prueba?',
+        answer: 'Para nada. Cada nuevo integrante es guiado a través de una sesión introductoria controlada y progresiva, adaptada exactamente a tu nivel inicial.',
       },
       {
         id: 'faq-02',
-        question: 'What do I need to bring for my free session?',
-        answer: 'Just standard athletic workout clothes (t-shirt/shorts) and a water bottle. All required technical equipment and sanitized gear are provided on premises free of charge.',
+        question: '¿Qué necesito llevar para mi primera clase?',
+        answer: 'Solo ropa deportiva cómoda (pantalón largo deportivo o buzo, polera, zapatillas) y una botella de agua. Todo el equipamiento de seguridad y armas de práctica es provisto por la academia.',
       },
       {
         id: 'faq-03',
-        question: 'How do membership payments work after the free class?',
-        answer: 'We do not lock you into confusing online billing tiers. If you decide to continue training after your free session, we complete membership enrollment and receive payments directly on-site at the front desk.',
+        question: '¿Cómo funcionan los pagos y planes de membresía?',
+        answer: 'No te amarramos a planes complicados por internet. Si decides integrarte tras tu clase de prueba, los detalles y pagos se gestionan directamente de forma transparente y con descuento para estudiantes.',
       },
       {
         id: 'faq-04',
-        question: 'Is there heavy sparring in the introductory classes?',
-        answer: 'Strictly no. Beginner classes focus 100% on technique, balance, mitt drills, and controlled movements. Full contact sparring is reserved exclusively for advanced competition athletes under medical supervision.',
+        question: '¿Hay combate con fuerza o peligro en las clases iniciales?',
+        answer: 'No. Las clases formativas se enfocan 100% en la técnica biomecánica, desplazamientos, control del arma y ejercicios de timing controlados. El combate libre de alta intensidad está reservado para niveles avanzados con indumentaria completa.',
       },
     ],
   },

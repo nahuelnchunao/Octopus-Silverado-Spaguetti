@@ -1,7 +1,7 @@
 /**
  * @file ScreenPathos.tsx
  * @description Screen 1: The Hook (Pathos) - Academia de Esgrima Histórica de Chile (AEHCH).
- * Uses the authentic official aehch-logo.png bundled directly via Vite asset imports.
+ * Foreground elements styled with subtle diagonal dark gray gradients (Style 1 with gradient).
  */
 
 import React, { useState, useEffect } from 'react';
@@ -100,8 +100,8 @@ export const ScreenPathos: React.FC<ScreenPathosProps> = ({
 
         {/* Foreground Content */}
         <div className="relative z-10 max-w-5xl mx-auto w-full px-6 lg:px-8 pt-8 lg:pt-12 pb-12 flex flex-col items-center text-center my-auto">
-          {/* Animated Motto Badge */}
-          <div className="mb-6 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-zinc-900/90 border border-amber-500/40 text-amber-400 text-xs lg:text-sm font-mono font-bold tracking-widest uppercase shadow-lg shadow-amber-500/10 backdrop-blur-md min-h-[34px]">
+          {/* Animated Motto Badge with diagonal gradient */}
+          <div className="mb-6 inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-br from-zinc-800/90 via-zinc-900/90 to-zinc-950 border border-amber-500/40 text-amber-400 text-xs lg:text-sm font-mono font-bold tracking-widest uppercase shadow-lg shadow-amber-500/10 backdrop-blur-md min-h-[34px]">
             <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse shrink-0" />
             <span
               className={`flex items-center gap-1.5 transition-opacity duration-300 ${
@@ -132,13 +132,13 @@ export const ScreenPathos: React.FC<ScreenPathosProps> = ({
           </div>
         </div>
 
-        {/* 3 Value Pillars Bar */}
-        <div className="relative z-10 w-full bg-zinc-950/90 border-t border-zinc-900 py-6 px-6 lg:px-8">
+        {/* 3 Value Pillars Bar (Diagonal Gradient Cards) */}
+        <div className="relative z-10 w-full bg-zinc-950/95 border-t border-zinc-900 py-6 px-6 lg:px-8">
           <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             
             {/* 1. FUERTES */}
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
-              <div className="p-3 rounded-lg bg-zinc-950 border border-amber-500/30 text-amber-400 shrink-0">
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/70 to-zinc-950 border border-zinc-700/80 shadow-md">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-transparent border border-amber-500/30 text-amber-400 shrink-0">
                 <BicepsFlexed className="w-6 h-6" />
               </div>
               <div>
@@ -153,8 +153,8 @@ export const ScreenPathos: React.FC<ScreenPathosProps> = ({
             </div>
 
             {/* 2. RÁPIDOS */}
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
-              <div className="p-3 rounded-lg bg-zinc-950 border border-amber-500/30 text-amber-400 shrink-0">
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/70 to-zinc-950 border border-zinc-700/80 shadow-md">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-transparent border border-amber-500/30 text-amber-400 shrink-0">
                 <Zap className="w-6 h-6" />
               </div>
               <div>
@@ -169,8 +169,8 @@ export const ScreenPathos: React.FC<ScreenPathosProps> = ({
             </div>
 
             {/* 3. ALTO */}
-            <div className="flex items-start gap-4 p-4 rounded-xl bg-zinc-900/60 border border-zinc-800/80">
-              <div className="p-3 rounded-lg bg-zinc-950 border border-amber-500/30 text-amber-400 shrink-0">
+            <div className="flex items-start gap-4 p-4 rounded-xl bg-gradient-to-br from-zinc-800/90 via-zinc-900/70 to-zinc-950 border border-zinc-700/80 shadow-md">
+              <div className="p-3 rounded-lg bg-gradient-to-br from-amber-400/20 via-amber-500/10 to-transparent border border-amber-500/30 text-amber-400 shrink-0">
                 <Trophy className="w-6 h-6" />
               </div>
               <div>
