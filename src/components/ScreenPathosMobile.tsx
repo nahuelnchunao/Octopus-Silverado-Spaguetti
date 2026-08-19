@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Zap, Trophy, BicepsFlexed } from 'lucide-react';
 import { SiteContentConfig } from '../types';
-import aehchLogoImg from '../assets/aehch-logo.png';
+import { AEHCH_LOGO_BASE64 } from '../assets/aehchLogoBase64';
 
 interface ScreenPathosMobileProps {
   content: SiteContentConfig;
@@ -85,7 +85,7 @@ export const ScreenPathosMobile: React.FC<ScreenPathosMobileProps> = ({
         {/* Authentic PNG Logo (420px) positioned 70% right, 60% down */}
         <div className="absolute top-[60%] left-[70%] -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] opacity-25 filter contrast-125">
           <img
-            src={aehchLogoImg}
+            src={AEHCH_LOGO_BASE64}
             alt="AEHCH"
             className="w-full h-full object-contain"
             loading="eager"

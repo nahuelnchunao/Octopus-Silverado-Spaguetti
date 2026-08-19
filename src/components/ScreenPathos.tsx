@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { Zap, Trophy, BicepsFlexed } from 'lucide-react';
 import { SiteContentConfig } from '../types';
 import { ScreenPathosMobile } from './ScreenPathosMobile';
-import aehchLogoImg from '../assets/aehch-logo.png';
+import { AEHCH_LOGO_BASE64 } from '../assets/aehchLogoBase64';
 
 interface ScreenPathosProps {
   content: SiteContentConfig;
@@ -88,11 +88,10 @@ export const ScreenPathos: React.FC<ScreenPathosProps> = ({
           {/* Large authentic PNG Logo with center at 70% horizontal, 60% vertical */}
           <div className="absolute top-[60%] left-[70%] -translate-x-1/2 -translate-y-1/2 w-[600px] lg:w-[816px] h-[600px] lg:h-[816px] opacity-30 filter contrast-125 pointer-events-none select-none">
             <img
-              src={aehchLogoImg}
+              src={AEHCH_LOGO_BASE64}
               alt="Logo Oficial Academia de Esgrima Histórica de Chile"
               className="w-full h-full object-contain drop-shadow-2xl"
               loading="eager"
-              decoding="sync"
             />
           </div>
 

@@ -6,7 +6,7 @@
 import React from 'react';
 import { Menu, Palette, Mail } from 'lucide-react';
 import { SiteContentConfig } from '../types';
-import aehchLogoImg from '../assets/aehch-logo.png';
+import { AEHCH_LOGO_BASE64 } from '../assets/aehchLogoBase64';
 
 interface HeaderProps {
   content: SiteContentConfig;
@@ -35,10 +35,10 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1"
             title="Return to Hero Screen"
           >
-            {/* Athletic Brand Glyph with authentic imported AEHCH PNG Logo */}
+            {/* Athletic Brand Glyph with authentic AEHCH PNG Logo */}
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-amber-500/40 p-0.5 bg-zinc-900 group-hover:scale-105 transition-transform shrink-0 shadow-md overflow-hidden flex items-center justify-center">
               <img
-                src={aehchLogoImg}
+                src={AEHCH_LOGO_BASE64}
                 alt="AEHCH"
                 className="w-full h-full object-contain"
                 loading="eager"
