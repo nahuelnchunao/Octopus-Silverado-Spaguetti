@@ -1,0 +1,6 @@
+{
+  "name": "Modern Martial Arts Gym Landing Page",
+  "description": "A high-performance landing page for Academia de Esgrima Histórica de Chile (AEHCH) with Aristotelian Rhetorical Triad structure, historical martial arts curriculum, and interactive booking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
