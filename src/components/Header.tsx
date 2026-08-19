@@ -35,13 +35,24 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1"
             title="Return to Hero Screen"
           >
-            {/* Athletic Brand Glyph with AEHCH Logo */}
-            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-amber-500/40 p-0.5 bg-zinc-900 group-hover:scale-105 transition-transform shrink-0 shadow-md overflow-hidden">
+            {/* Athletic Brand Glyph with AEHCH Logo (Supports relative path & fallback to vector) */}
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-amber-500/40 p-0.5 bg-zinc-900 group-hover:scale-105 transition-transform shrink-0 shadow-md overflow-hidden flex items-center justify-center">
               <img
-                src="/aehch-logo.png"
+                src="./aehch-logo.png"
                 alt="AEHCH"
                 className="w-full h-full object-contain"
-                referrerPolicy="no-referrer"
+                onError={(e) => {
+                  // If PNG path is missing on subpath hosting, swap with vector
+                  const target = e.currentTarget;
+                  target.style.display = 'none';
+                  const parent = target.parentElement;
+                  if (parent && !parent.querySelector('svg')) {
+                    const fallback = document.createElement('div');
+                    fallback.className = 'w-full h-full p-0.5';
+                    fallback.innerHTML = `<svg viewBox="0 0 100 100" class="w-full h-full text-amber-400" fill="currentColor"><circle cx="50" cy="50" r="45" stroke="#DE9B27" stroke-width="6" fill="#18181b"/><path d="M35 50 L65 50 M50 25 L50 75" stroke="#DE9B27" stroke-width="6" stroke-linecap="round"/></svg>`;
+                    parent.appendChild(fallback);
+                  }
+                }}
               />
             </div>
 
