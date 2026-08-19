@@ -6,7 +6,7 @@
 import React from 'react';
 import { Menu, Palette, Mail } from 'lucide-react';
 import { SiteContentConfig } from '../types';
-import { AehchLogo } from './AehchLogo';
+import aehchLogoImg from '../assets/aehch-logo.png';
 
 interface HeaderProps {
   content: SiteContentConfig;
@@ -35,24 +35,13 @@ export const Header: React.FC<HeaderProps> = ({
             className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 rounded-lg p-1"
             title="Return to Hero Screen"
           >
-            {/* Athletic Brand Glyph with AEHCH Logo (Supports relative path & fallback to vector) */}
+            {/* Athletic Brand Glyph with authentic imported AEHCH PNG Logo */}
             <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-amber-500/40 p-0.5 bg-zinc-900 group-hover:scale-105 transition-transform shrink-0 shadow-md overflow-hidden flex items-center justify-center">
               <img
-                src="./aehch-logo.png"
+                src={aehchLogoImg}
                 alt="AEHCH"
                 className="w-full h-full object-contain"
-                onError={(e) => {
-                  // If PNG path is missing on subpath hosting, swap with vector
-                  const target = e.currentTarget;
-                  target.style.display = 'none';
-                  const parent = target.parentElement;
-                  if (parent && !parent.querySelector('svg')) {
-                    const fallback = document.createElement('div');
-                    fallback.className = 'w-full h-full p-0.5';
-                    fallback.innerHTML = `<svg viewBox="0 0 100 100" class="w-full h-full text-amber-400" fill="currentColor"><circle cx="50" cy="50" r="45" stroke="#DE9B27" stroke-width="6" fill="#18181b"/><path d="M35 50 L65 50 M50 25 L50 75" stroke="#DE9B27" stroke-width="6" stroke-linecap="round"/></svg>`;
-                    parent.appendChild(fallback);
-                  }
-                }}
+                loading="eager"
               />
             </div>
 
@@ -69,45 +58,43 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* PRIMARY CTA + STYLE LAB + SIDEBAR TOGGLE */}
-        <div id="header-actions-container" className="flex items-center gap-2 sm:gap-3">
-          
-          {/* Quick Style Lab Switcher Button */}
+        <div className="flex items-center gap-2 sm:gap-3">
+          {/* Quick link to Style Comparison Lab */}
           {onOpenStyleComparison && (
             <button
               type="button"
-              id="header-style-lab-button"
+              id="header-style-comparison-btn"
               onClick={onOpenStyleComparison}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-zinc-900 hover:bg-zinc-850 text-amber-400 hover:text-amber-300 border border-amber-500/30 hover:border-amber-500 text-xs font-mono font-medium transition-all cursor-pointer"
-              title="Compare 3 Graphic Styles for Client"
+              className="hidden lg:flex items-center gap-2 px-3 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-300 hover:text-amber-400 text-xs font-mono transition-colors cursor-pointer"
+              title="Compare Visual Card Styles"
             >
-              <Palette className="w-3.5 h-3.5" />
-              <span className="hidden md:inline">Graphic Styles Lab</span>
+              <Palette className="w-3.5 h-3.5 text-amber-400" />
+              <span>Style Lab</span>
             </button>
           )}
 
-          {/* PRIMARY CONVERSION CTA */}
+          {/* Quick Access Free Trial CTA */}
           <button
             type="button"
-            id="header-primary-cta-button"
+            id="header-trial-cta-btn"
             onClick={onOpenTrialModal}
-            className="relative flex items-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-zinc-950 font-display font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 transform hover:scale-102 active:scale-98 shadow-lg shadow-amber-500/25 cursor-pointer"
+            className="flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-300 hover:to-yellow-400 text-zinc-950 font-display font-bold text-xs sm:text-sm uppercase tracking-wider transition-all transform hover:scale-102 active:scale-98 shadow-lg shadow-amber-500/20 cursor-pointer shrink-0"
           >
-            <Mail className="w-4 h-4 stroke-[2.2] text-zinc-950 shrink-0" />
-            <span>CONTÁCTANOS</span>
+            <Mail className="w-3.5 h-3.5 text-zinc-950 shrink-0" />
+            <span className="hidden xs:inline">{content.screen3Ethos.dealSummary.glowingCtaText}</span>
+            <span className="xs:hidden">Prueba Gratis</span>
           </button>
 
-          {/* SIDEBAR TRIGGER BUTTON */}
+          {/* Sidebar Toggle Button */}
           <button
             type="button"
-            id="open-offcanvas-sidebar-btn"
+            id="header-sidebar-toggle-btn"
             onClick={onOpenSidebar}
-            className="flex items-center justify-center p-2.5 sm:p-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-200 hover:text-amber-400 border border-zinc-700/80 hover:border-amber-500/40 transition-all duration-200 shadow-md group cursor-pointer"
-            title="Open Academy Directory & Navigation Menu"
-            aria-label="Open Navigation Menu"
+            className="p-2 sm:p-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 transition-colors cursor-pointer"
+            aria-label="Open navigation sidebar"
           >
-            <Menu className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
           </button>
-
         </div>
 
       </div>
